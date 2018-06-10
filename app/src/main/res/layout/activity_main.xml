@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <!--<ImageButton xmlns:tools="http://schemas.android.com/tools"-->
         <!--tools:ignore="ContentDescription"-->
         <!--android:id="@+id/button"-->
@@ -22,6 +21,14 @@
         android:layout_height="wrap_content"
         android:text="REFRESH FEED"
         android:layout_centerHorizontal="true"/>
+
+    <ProgressBar
+        android:layout_below="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/list"
@@ -33,6 +40,7 @@
         android:paddingTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
     </ListView>
 

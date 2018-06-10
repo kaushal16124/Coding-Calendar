@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -31,6 +32,7 @@ import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ProgressBar progress;
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
 //        final ArrayList<Word> words=new ArrayList<Word>();
 
         Button click = (Button) findViewById(R.id.button);
+        progress =(ProgressBar)findViewById(R.id.pbar);
+
 
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progress.setVisibility(View.VISIBLE);
                 fetchData process = new fetchData();
                 process.execute();
             }
@@ -59,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             String duration2="";
             Integer startTime;
 
+
             final ArrayList<Word> words=new ArrayList<Word>();
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -67,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                     URL url= new URL("http://codeforces.com/api/contest.list?gym=false");
-
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     InputStream inputStream = httpURLConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 WordAdapter adapter = new WordAdapter(MainActivity.this, words);
 
                 listView.setAdapter(adapter);
+                progress.setVisibility(View.INVISIBLE);
             }
         }
 }
