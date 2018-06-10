@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--<ImageButton xmlns:tools="http://schemas.android.com/tools"-->
+        <!--tools:ignore="ContentDescription"-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:backgroundTint="#FFEA00"-->
+        <!--android:src="@drawable/news_feed" />-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REFRESH FEED"
+        android:layout_centerHorizontal="true"/>
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/list"
+        android:layout_below="@+id/button"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_gravity="center|bottom"-->
+        <!--android:layout_marginBottom="26dp"-->
+        <!--android:background="#FFEA00"-->
+        <!--android:src="@drawable/news_feed"-->
+        <!--app:backgroundTint="#FFEA00"-->
+        <!--app:elevation="6dp"-->
+        <!--app:pressedTranslationZ="12dp" />-->
+
+</RelativeLayout>
